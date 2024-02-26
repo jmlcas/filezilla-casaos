@@ -15,8 +15,8 @@ services:
       - target: 3001
         published: "3001"
         protocol: tcp
-      labels:  
-        icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/filezilla-logo.png    
+    labels:  
+      icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/filezilla-logo.png    
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/config
@@ -36,7 +36,7 @@ x-casaos:
   port_map: "3000"
   scheme: http
   title:
-    custom: filezilla
+    custom: Filezilla
   description:
     en_us: Filezilla for CasaOS
   tagline:
