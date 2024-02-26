@@ -1,0 +1,47 @@
+name: filezilla
+services:
+  filezilla:
+    image: linuxserver/filezilla:3.66.4
+    container_name: filezilla 
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: "3000"
+        protocol: tcp
+      - target: 3001
+        published: "3001"
+        protocol: tcp
+      labels:  
+        icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/filezilla-logo.png    
+    volumes:
+      - type: bind
+        source: /DATA/AppData/filezilla/config
+        target: /config
+    networks:
+      - filezilla
+    privileged: false
+networks:
+  filezilla:
+    name: filezilla        
+x-casaos:
+  author: Labarta
+  category: Utilities
+  hostname: ""
+  icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/filezilla-logo.png
+  index: /
+  port_map: "3000"
+  scheme: http
+  title:
+    custom: filezilla
+  description:
+    en_us: Filezilla for CasaOS
+  tagline:
+    en_us: Provides additional features to CasaOS.
+  architectures:
+    - amd64
+    - arm64
+  
