@@ -19,8 +19,8 @@ services:
         icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/filezilla-logo.png    
     volumes:
       - type: bind
-        source: /DATA/AppData/filezilla/config
-        target: /config
+        source: /DATA/AppData/$AppID/config
+        target: /config  
     networks:
       - filezilla
     privileged: false
