@@ -5,9 +5,9 @@ services:
     container_name: filezilla 
     restart: unless-stopped
     environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: Europe/Madrid
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ  
     ports:
       - target: 3000
         published: "3000"
